@@ -8,7 +8,7 @@ public class DB_User {
     static final String USER="webapp";
     static final String PASS= "Analesh@123";
 
-    public boolean IsvalidUser1(String sUserName){
+    public boolean IsvalidUser1(String sUserName, String semail){
         boolean isvaliduser =false;
         Connection conn = null;
         Statement stmt = null;
@@ -23,7 +23,7 @@ public class DB_User {
 
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT * FROM Demo.users WHERE username = \""+sUserName+"\"";
+            sql = "SELECT * FROM Demo.users WHERE username = \""+sUserName+"\" OR email = \""+semail+"\"";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set

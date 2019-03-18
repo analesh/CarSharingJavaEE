@@ -10,9 +10,9 @@ public class User {
         }
         return  false;
     }
-    public boolean IsValidCredentials1(String username){
+    public boolean IsValidCredentials1(String username, String email){
         DB_User obj_db_user1 = new DB_User();
-        if(obj_db_user1.IsvalidUser1(username)){
+        if(obj_db_user1.IsvalidUser1(username,email)){
             return true;
         }
         return  false;

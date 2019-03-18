@@ -20,7 +20,7 @@ public class signup1 extends HttpServlet {
         request.setAttribute("password" ,request.getParameter("pass"));
         request.setAttribute("phone" ,request.getParameter("phone"));
         request.setAttribute("email" ,request.getParameter("email"));
-        if(UserObj1.IsValidCredentials1(request.getParameter("username"))) {
+        if(UserObj1.IsValidCredentials1(request.getParameter("username"),request.getParameter("email"))) {
             request.getRequestDispatcher("/signup1.jsp").forward(request, response);
         }
         else{
