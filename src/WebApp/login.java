@@ -11,6 +11,7 @@ public class login extends javax.servlet.http.HttpServlet {
         request.setAttribute("errorMessage" ,"The Username or Password is wrong");
         request.setAttribute("username" ,request.getParameter("username"));
         request.setAttribute("password" ,request.getParameter("password"));
+
         if(UserObj.IsValidCredentials(request.getParameter("username"),request.getParameter("password"))) {
             request.getRequestDispatcher("/welcome.jsp").forward(request, response);
         }
