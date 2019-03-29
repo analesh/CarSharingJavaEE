@@ -25,13 +25,13 @@
             <input type="submit" value="login"/>
         </form>
         <p style="color: red"> ${errorMessage} </p> -->
+<%@include file="navbar.html" %>
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
 
         <!-- Icon -->
         <div class="fadeIn first">
-            <img src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->

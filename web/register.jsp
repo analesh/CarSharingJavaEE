@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+<%@include file="reg_navbar.html" %>
 You have successfully registered <span>${username}</span>.
 </body>
 </html>
