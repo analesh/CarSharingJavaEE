@@ -13,6 +13,7 @@
 <body>
 <h1>Welcome ${username}</h1>
 <p>Your Password is " ${password}"</p>
+<a href="logout.jsp">Logout</a>
 
 </body>
 </html>

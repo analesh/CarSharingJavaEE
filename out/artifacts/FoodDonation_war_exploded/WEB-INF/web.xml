@@ -20,4 +20,12 @@
         <servlet-name>signup1</servlet-name>
         <url-pattern>/signup1</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>offer_ride</servlet-name>
+        <servlet-class>WebApp.offer_ride</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>offer_ride</servlet-name>
+        <url-pattern>/offer_ride</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,6 +1,5 @@
 body{
-    background: url("https://images.unsplash.com/photo-1552313197-93bc4445c270?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1447&q=80");
-    background-size: cover;
+    background: white;
 }
 .send-button{
     background: #54C7C3;
@@ -39,7 +38,7 @@ h1{
     font-size: 31px;
     line-height: 40px;
     font-weight: 600;
-    color:aliceblue;
+    color:#00AFF5;
 }
 h2{
     color: #5e8396;

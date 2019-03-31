@@ -2,25 +2,18 @@ package dataLayer;
 
 import java.sql.*;
 
-public class DB_register {static final String JDBC_DRIVER="com.mysql.cj.jdbc.Driver";
-    static final String DB_URL="jdbc:mysql://localhost/Demo";
-
-    static final String USER="webapp";
-    static final String PASS= "Analesh@123";
-
+public class DB_register {
+    private Connection conn = null;
+    private Statement stmt = null;
+    private ResultSet rs = null;
     public void register( String username, String password,String email, String phone){
 
 
-        Connection conn = null;
-        Statement stmt = null;
+
         try{
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
-            //STEP 4: Execute a query
+            if(conn==null) {
+                conn = carpool_data.getcarpool_data();
+            }
 
             stmt = conn.createStatement();
             String sql;

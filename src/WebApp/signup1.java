@@ -15,7 +15,7 @@ public class signup1 extends HttpServlet {
     User UserObj1=new User();
     DB_register DB_reg_obj = new DB_register();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("errorMessage1" ,"The Username already Exists!! Please Login");
+        request.setAttribute("errorMessage1" ,"The Username Or Email already Exists!! Please Login");
         request.setAttribute("username" ,request.getParameter("username"));
         request.setAttribute("password" ,request.getParameter("pass"));
         request.setAttribute("phone" ,request.getParameter("phone"));

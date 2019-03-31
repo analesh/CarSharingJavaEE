@@ -2,29 +2,22 @@ package dataLayer;
 import java.sql.*;
 
 public class DB_User {
-    static final String JDBC_DRIVER="com.mysql.cj.jdbc.Driver";
-    static final String DB_URL="jdbc:mysql://localhost/Demo";
-
-    static final String USER="webapp";
-    static final String PASS= "Analesh@123";
+    private Connection conn = null;
+    private Statement stmt = null;
+    private ResultSet rs = null;
 
     public boolean IsvalidUser1(String sUserName, String semail){
         boolean isvaliduser =false;
-        Connection conn = null;
-        Statement stmt = null;
+
         try{
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
-            //STEP 4: Execute a query
+            if(conn==null) {
+                conn = carpool_data.getcarpool_data();
+            }
 
             stmt = conn.createStatement();
             String sql;
             sql = "SELECT * FROM Demo.users WHERE username = \""+sUserName+"\" OR email = \""+semail+"\"";
-            ResultSet rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while(rs.next()){
@@ -59,22 +52,17 @@ public class DB_User {
     }
     public boolean IsvalidUser(String sUserName, String sPassword){
         boolean isvaliduser1 =false;
-        Connection conn = null;
-        Statement stmt = null;
+
         try{
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            //STEP 3: Open a connection
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            if(conn==null) {
+                conn = carpool_data.getcarpool_data();
+            }
 
-            //STEP 4: Execute a query
-            System.out.println("Creating statement...");
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT * FROM users WHERE username = \""+sUserName+"\" AND password = \""+sPassword+"\"";
-            ResultSet rs = stmt.executeQuery(sql);
+            sql = "SELECT * FROM Demo.users WHERE username = \""+sUserName+"\" AND password = \""+sPassword+"\"";
+            rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while(rs.next()){

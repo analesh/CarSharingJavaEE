@@ -12,7 +12,18 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style><%@include file="/WEB-INF/css/signup_.css"%>
-
+     .button{
+         background-color:  #00AFF5;
+         border: none;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         border-radius: 48px;
+     }
     </style>
     <title>SignUp</title>
 </head>
@@ -40,20 +51,23 @@
             <div class="myform form ">
                 <form action="/signup1" method="post" name="login">
                     <div class="form-group">
-                        <input type="text" name="username"  class="form-control my-input" id="name" placeholder="Name">
+                        <input type="text" name="username"  class="form-control my-input" id="name" placeholder="Name"required="required">
                         <p style="color: red"> ${errorMessage1} </p>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
+                        <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email" required="required">
                     </div>
                     <div class="form-group">
-                        <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Phone">
+                        <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Phone" required="required">
                     </div>
                     <div class="form-group">
-                        <input type="password" min="0" name="pass" id="password"  class="form-control my-input" placeholder="Password">
+                        <input type="password" min="0" name="pass" id="password"  class="form-control my-input" placeholder="Password" required="required">
                     </div>
                     <div class="text-center ">
-                        <button type="submit" class="btn btn-btn-primary send-button tx-tfm">Create Your Free Account</button>
+                        <button type="submit" class="button">Create Your Free Account</button>
+                    </div>
+                    <div class="text-center ">
+                        <h6><a class="underlineHover" href="login.jsp">Already have account?</a></h6>
                     </div>
 
 

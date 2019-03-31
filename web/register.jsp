@@ -14,10 +14,14 @@
             font-weight: bold;
 
         }
+        body{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <%@include file="reg_navbar.html" %>
 You have successfully registered <span>${username}</span>.
+<a href="login.jsp">Please login to continue</a>
 </body>
 </html>

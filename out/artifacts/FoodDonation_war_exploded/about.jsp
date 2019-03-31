@@ -71,41 +71,50 @@
 
 </head>
 <body>
-<!-- Header -->
-<nav class="navbar navbar-inverse">
-    <div >
-        <div class="navbar-header">
-
-            <a class="navbar-brand" href="#">CarPool</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li ><a href="index.jsp">Home</a></li>
-                <li class="active"><a href="#">About</a></li>
-
-                <li ><a href="contact.jsp">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="signup1.jsp"><span class="glyphicon glyphicon-plus"></span> SignUp</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<%@include file="navbar.html" %>
 
 <div class="container-fluid bg-1 text-center">
-    <h3>Developer</h3>
-    <img src="https://lh3.googleusercontent.com/jtvIog26SE0pXQRFfBbgaRIPQ4-EJnVeC2da-Lw-1eKW87K1Mt7Rs-oj-9GW1Nm5KCXHNN6B4eGQljtcRpJWIY1aHY3BHrRG1z2jiCddWSsnCbYbbP_i7rFmAyEANFzxeibCgtczCg=w659-h637-no" class="img-circle" alt="Bird" width="350" height="350">
-    <h3>Analesh Jaiswal</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <img src="https://lh3.googleusercontent.com/jtvIog26SE0pXQRFfBbgaRIPQ4-EJnVeC2da-Lw-1eKW87K1Mt7Rs-oj-9GW1Nm5KCXHNN6B4eGQljtcRpJWIY1aHY3BHrRG1z2jiCddWSsnCbYbbP_i7rFmAyEANFzxeibCgtczCg=w659-h637-no" class="img-circle" alt="Bird" width="350" height="350">
+                <h3>Analesh Jaiswal</h3>
+                <h3>Developer</h3>
+
+            </div>
+            <div class="col">
+
+                <img src="https://lh3.googleusercontent.com/jtvIog26SE0pXQRFfBbgaRIPQ4-EJnVeC2da-Lw-1eKW87K1Mt7Rs-oj-9GW1Nm5KCXHNN6B4eGQljtcRpJWIY1aHY3BHrRG1z2jiCddWSsnCbYbbP_i7rFmAyEANFzxeibCgtczCg=w659-h637-no" class="img-circle" alt="Bird" width="350" height="350">
+                <h3>Analesh Jaiswal</h3>
+                <h3>Developer</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <img src="https://lh3.googleusercontent.com/jtvIog26SE0pXQRFfBbgaRIPQ4-EJnVeC2da-Lw-1eKW87K1Mt7Rs-oj-9GW1Nm5KCXHNN6B4eGQljtcRpJWIY1aHY3BHrRG1z2jiCddWSsnCbYbbP_i7rFmAyEANFzxeibCgtczCg=w659-h637-no" class="img-circle" alt="Bird" width="350" height="350">
+                <h3>Analesh Jaiswal</h3>
+                <h3>Developer</h3>
+            </div>
+            <div class="col">
+
+                <img src="https://lh3.googleusercontent.com/jtvIog26SE0pXQRFfBbgaRIPQ4-EJnVeC2da-Lw-1eKW87K1Mt7Rs-oj-9GW1Nm5KCXHNN6B4eGQljtcRpJWIY1aHY3BHrRG1z2jiCddWSsnCbYbbP_i7rFmAyEANFzxeibCgtczCg=w659-h637-no" class="img-circle" alt="Bird" width="350" height="350">
+                <h3>Analesh Jaiswal</h3>
+                <h3>Developer</h3>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <div class="container-fluid bg-2 text-center">
-    <h3>What Am I?</h3>
+    <h3>What Are We?</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 </div>
 
 <div class="container-fluid bg-3 text-center">
-    <h3>Where To Find Me?</h3>
+    <h3>Where To Find Us?</h3>
     <div class="social">
 
         <a class="social-icon" data-tooltip="email@gmail.com" href="mailto:analeshjswl@gmail.com">

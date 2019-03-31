@@ -46,7 +46,7 @@
             <p style="color: red"> ${errorMessage} </p>
 
 
-            <a class="underlineHover" href="#">Forgot Password?</a>
+            <a class="underlineHover" href="signup1.jsp">Didn't have account?</a>
         </div>
 
     </div>
