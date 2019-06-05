@@ -2,7 +2,7 @@ package dataLayer;
 
 import java.sql.*;
 
-public class DB_register {
+public class DB_register implements Dbdetails {
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
@@ -11,8 +11,12 @@ public class DB_register {
 
 
         try{
-            if(conn==null) {
-                conn = carpool_data.getcarpool_data();
+            try {
+                Class.forName(DRIVER);
+                conn = DriverManager.getConnection(URL, USER, PWD);
+                System.out.println("connected email");
+            } catch (Exception e) {
+                System.out.println("Couldn't connect" + e);
             }
 
             stmt = conn.createStatement();
@@ -21,8 +25,8 @@ public class DB_register {
                     ",'"+email+"','"+phone+"' )";
 
 stmt.executeUpdate(sql);
-            stmt.close();
-            conn.close();
+            stmt=null;
+            conn=null;
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -31,17 +35,12 @@ stmt.executeUpdate(sql);
             e.printStackTrace();
         }finally{
             //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    stmt.close();
-            }catch(SQLException se2){
-            }// nothing we can do
-            try{
-                if(conn!=null)
-                    conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
+            if(stmt!=null)
+                stmt=null;
+            if(conn!=null)
+                conn=null;
+            if(rs!=null)
+                rs=null;
         }//end try
 
     }

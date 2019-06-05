@@ -31,7 +31,7 @@
 
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <body>
-<%@include file="navbar.html" %>
+<%@include file="navbar1.html" %>
 <div class="container">
     <div class="row">
         <div class="col-8  mx-auto text-center">

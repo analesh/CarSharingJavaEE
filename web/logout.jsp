@@ -5,7 +5,9 @@
   Time: 12:55 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%
+    session.removeAttribute("user");
     session.invalidate();
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("/index.jsp");
 %>

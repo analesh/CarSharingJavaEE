@@ -7,15 +7,17 @@ public class User {
         DB_User obj_db_user = new DB_User();
         if(obj_db_user.IsvalidUser(username,password)){
             return true;
+        }else {
+            return false;
         }
-        return  false;
     }
     public boolean IsValidCredentials1(String username, String email){
         DB_User obj_db_user1 = new DB_User();
         if(obj_db_user1.IsvalidUser1(username,email)){
             return true;
+        }else {
+            return false;
         }
-        return  false;
     }
 
 }

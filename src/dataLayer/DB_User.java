@@ -1,7 +1,7 @@
 package dataLayer;
 import java.sql.*;
 
-public class DB_User {
+public class DB_User implements Dbdetails{
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
@@ -10,8 +10,16 @@ public class DB_User {
         boolean isvaliduser =false;
 
         try{
-            if(conn==null) {
-                conn = carpool_data.getcarpool_data();
+//            if(conn==null) {
+//                conn = carpool_data.getcarpool_data();
+//            }
+
+            try {
+                Class.forName(DRIVER);
+                conn = DriverManager.getConnection(URL, USER, PWD);
+                System.out.println("connected email");
+            } catch (Exception e) {
+                System.out.println("Couldn't connect" + e);
             }
 
             stmt = conn.createStatement();
@@ -25,9 +33,9 @@ public class DB_User {
                isvaliduser=true;
             }
             //STEP 6: Clean-up environment
-            rs.close();
-            stmt.close();
-            conn.close();
+//            rs=null;
+//            stmt=null;
+//            conn=null;
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -36,18 +44,14 @@ public class DB_User {
             e.printStackTrace();
         }finally{
             //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    stmt.close();
-            }catch(SQLException se2){
-            }// nothing we can do
-            try{
-                if(conn!=null)
-                    conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
+            if(stmt!=null)
+                stmt=null;
+            if(conn!=null)
+                conn=null;
+            if(rs!=null)
+                rs=null;
         }//end try
+        System.out.println(isvaliduser);
  return isvaliduser;
     }
     public boolean IsvalidUser(String sUserName, String sPassword){
@@ -55,9 +59,14 @@ public class DB_User {
 
         try{
 
-            if(conn==null) {
-                conn = carpool_data.getcarpool_data();
-            }
+            try {
+            Class.forName(DRIVER);
+            conn = DriverManager.getConnection(URL, USER, PWD);
+            System.out.println("connected isvalidpass");
+        } catch (Exception e) {
+            System.out.println("Couldn't connect" + e);
+        }
+
 
             stmt = conn.createStatement();
             String sql;
@@ -70,9 +79,9 @@ public class DB_User {
                 isvaliduser1=true;
             }
             //STEP 6: Clean-up environment
-            rs.close();
-            stmt.close();
-            conn.close();
+//            rs=null;
+//            stmt=null;
+//            conn=null;
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -81,18 +90,14 @@ public class DB_User {
             e.printStackTrace();
         }finally{
             //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    stmt.close();
-            }catch(SQLException se2){
-            }// nothing we can do
-            try{
-                if(conn!=null)
-                    conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
+            if(stmt!=null)
+                stmt=null;
+            if(conn!=null)
+                conn=null;
+            if(rs!=null)
+                rs=null;
         }//end try
+        System.out.println(isvaliduser1);
         return isvaliduser1;
     }
 }

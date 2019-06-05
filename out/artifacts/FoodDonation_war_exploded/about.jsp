@@ -71,7 +71,23 @@
 
 </head>
 <body>
+<%
+    if (session != null) {
+        if (session.getAttribute("user") != null) {
+            String name = (String) session.getAttribute("user");
+%>
+<%@ include file="reg_navbar.html" %>
+
+<%
+
+} else {
+
+%>
 <%@include file="navbar.html" %>
+<%
+        }
+    }
+%>
 
 <div class="container-fluid bg-1 text-center">
     <div class="container">

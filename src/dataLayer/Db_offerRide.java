@@ -2,7 +2,7 @@ package dataLayer;
 
 import java.sql.*;
 
-public class Db_offerRide {
+public class Db_offerRide implements Dbdetails {
 
         private Connection conn = null;
         private PreparedStatement ps = null;
@@ -11,9 +11,14 @@ public class Db_offerRide {
       public boolean  offer_ride(String car_name, String start_trip, Integer occupancy, String end_trip, String time, String date,Integer price ){
           boolean isvalidride=false;
           try {
-              if(conn==null) {
-                  conn = carpool_data.getcarpool_data();
+              try {
+                  Class.forName(DRIVER);
+                  conn = DriverManager.getConnection(URL, USER, PWD);
+                  System.out.println("connected offerride");
+              } catch (Exception e) {
+                  System.out.println("Couldn't connect" + e);
               }
+
               String query = "insert into Demo.car_detail(car_name,start_trip,occupancy,end_trip,time,date,price) values(?,?,?,?,?,?,?)";
               ps = conn.prepareStatement(query);
               ps.setString(1,car_name);

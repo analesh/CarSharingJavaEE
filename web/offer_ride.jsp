@@ -27,10 +27,25 @@
         .container{
             margin-top: 40px;
         }
+    h1{
+        text-align: center;
+    }
     </style>
     <title>Offer Ride</title>
 </head>
 <body>
+<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    response.setDateHeader("Expires", 0); // Proxies.
+    if (session != null) {
+        if (session.getAttribute("user") != null) {
+            String name = (String) session.getAttribute("user");
+%>
+<%@ include file="reg_navbar.html" %>
+
+
+<h1>Offer Ride</h1>
 <div class="container">
     <div class="row">
         <div class="col-4  mx-auto">
@@ -58,7 +73,7 @@
                     <div class="form-group">
                         <input type="number" min="1" name="price_ride" id="price_ride"  class="form-control my-input" placeholder="Price per Person" required="required">
                     </div>
-                    <div class="text-center form-control ">
+                    <div class="text-center form-group ">
                         <button type="submit" class="button">Offer Ride</button>
                     </div>
 
@@ -68,6 +83,12 @@
     </div>
 
 </div>
+<%
 
+} else {
+    response.sendRedirect("/index.jsp");
+        }
+    }
+%>
 </body>
 </html>

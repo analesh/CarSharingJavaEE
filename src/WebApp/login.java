@@ -2,6 +2,7 @@ package WebApp;
 
 import AppLayer.User;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -13,7 +14,11 @@ public class login extends javax.servlet.http.HttpServlet {
         request.setAttribute("password" ,request.getParameter("password"));
 
         if(UserObj.IsValidCredentials(request.getParameter("username"),request.getParameter("password"))) {
-            request.getRequestDispatcher("/welcome.jsp").forward(request, response);
+            HttpSession session = request.getSession();
+            session.setAttribute("user",request.getParameter("username"));
+            session.setMaxInactiveInterval(3);
+            response.sendRedirect("/welcome.jsp");
+//            request.getRequestDispatcher("/welcome.jsp").forward(request, response);
         }
         else{
             request.getRequestDispatcher("/login.jsp").forward(request, response);

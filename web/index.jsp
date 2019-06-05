@@ -68,14 +68,48 @@ position: absolute ;
   </style>
 </head>
 <body>
+<%
+  if (session != null) {
+    if (session.getAttribute("user") != null) {
+      String name = (String) session.getAttribute("user");
+%>
+<%@ include file="reg_navbar.html" %>
 
+<%
+
+    } else {
+
+      %>
 <%@include file="navbar.html" %>
+<%
+    }
+  }
+%>
+
 <div class="main-area-index">
   <div class="img-one ">
     <div class="img-text text-center">
       <h1> Meet The People You Love On Your Time</h1>
       <p> Share the Ride Cost</p>
-      <a class="button" href="#">Find Rides</a>
+      <%
+        if (session != null) {
+          if (session.getAttribute("user") != null) {
+            String name = (String) session.getAttribute("user");
+      %>
+
+      <a class="button" href="findride.jsp">Find Rides</a>
+
+      <%
+
+      } else {
+
+      %>
+      <a class="button" href="login.jsp">Find Rides</a>
+      <%
+          }
+        }
+      %>
+
     </div>
   </div>
 

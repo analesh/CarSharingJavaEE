@@ -17,7 +17,7 @@ public class carpool_data implements Dbdetails{
         try {
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL, USER, PWD);
-            System.out.println("connected");
+            System.out.println("connected carpool");
         } catch (Exception e) {
             System.out.println("Couldn't connect" + e);
         }
